@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matías Sandoval R. · Desarrollador</title>
+  <meta name="description" content="Portafolio de Matías Sandoval R., estudiante de Ingeniería Informática y desarrollador backend.">
+
+  <!-- Tipografías: Space Grotesk (títulos), Inter (cuerpo), JetBrains Mono (etiquetas técnicas) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ============ HEADER / NAV ============ -->
+  <header class="site-header" id="top">
+    <nav class="nav" aria-label="Navegación principal">
+      <a href="#top" class="nav__logo">MSR<span class="nav__logo-dot">.</span></a>
+
+      <!-- Botón hamburguesa (mobile) -->
+      <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Abrir menú de navegación">
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+      </button>
+
+      <ul class="nav__menu" id="navMenu">
+        <li><a href="#sobre-mi" class="nav__link">Sobre mí</a></li>
+        <li><a href="#habilidades" class="nav__link">Habilidades</a></li>
+        <li><a href="#proyectos" class="nav__link">Proyectos</a></li>
+        <li><a href="#contacto" class="nav__link nav__link--cta">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="hero" aria-label="Presentación">
+      <div class="hero__content">
+        <p class="hero__badge" id="availabilityBadge">
+          <span class="hero__badge-dot" aria-hidden="true"></span>
+          <span id="availabilityText">Disponible para práctica profesional</span>
+        </p>
+
+        <h1 class="hero__name">Matías Sandoval R.</h1>
+        <p class="hero__role">Estudiante de Ingeniería Informática <span class="hero__role-sep">|</span> Desarrollador</p>
+
+        <p class="hero__bio">
+          Estudiante de Ingeniería Informática enfocado en desarrollo fullstack y en la creación de
+          agentes de inteligencia artificial. Me interesa construir productos completos de punta a punta,
+          aplicar buenas prácticas de testing y resolver problemas reales usando Design Thinking.
+        </p>
+
+        <div class="hero__actions">
+          <a href="#proyectos" class="btn btn--primary">Ver proyectos</a>
+          <a href="mailto:matias.sandovalroa@gmail.com" class="btn btn--secondary">Contáctame</a>
+          <a href="https://github.com/Matias-SR" class="btn btn--ghost" target="_blank" rel="noopener noreferrer">
+            GitHub
+            <svg class="btn__icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M4 12L12 4M12 4H5M12 4V11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero__avatar-wrap" aria-hidden="true">
+        <div class="hero__glow"></div>
+        <!-- AVATAR: reemplazar el contenido de este div por <img src="assets/avatar.jpg" alt="Matías Sandoval R."> cuando tengas foto -->
+        <div class="hero__avatar">
+          <span class="hero__avatar-initials">MS</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SOBRE MÍ ============ -->
+    <section class="about" id="sobre-mi" aria-labelledby="about-title">
+      <div class="container about__container">
+
+        <div class="about__intro">
+          <p class="section-eyebrow">~/sobre-mi</p>
+          <h2 class="section-title" id="about-title">Sobre mí</h2>
+
+          <p class="about__text">
+            Soy Matías Sandoval R., estudiante de Ingeniería Informática en
+            <strong>DuocUC</strong>. Me enfoco en el <strong>desarrollo fullstack</strong> y en la
+            <strong>creación de agentes de inteligencia artificial</strong> con Python, combinando
+            lógica de backend, interfaces funcionales y automatización inteligente en un mismo proyecto.
+          </p>
+
+          <p class="about__text">
+            Aplico la metodología <strong>Design Thinking</strong> para abordar problemas desde la
+            perspectiva del usuario antes de programar, y me interesa que cada solución que construyo
+            esté respaldada por pruebas y buenas prácticas de ingeniería.
+          </p>
+        </div>
+
+        <ul class="about__facts" aria-label="Datos clave">
+          <li class="about__fact">
+            <span class="about__fact-label">Institución</span>
+            <span class="about__fact-value">Ingeniería Informática · DuocUC</span>
+          </li>
+          <li class="about__fact">
+            <span class="about__fact-label">Enfoque</span>
+            <span class="about__fact-value">Desarrollo Fullstack &amp; Agentes de IA</span>
+          </li>
+          <li class="about__fact">
+            <span class="about__fact-label">Lenguajes</span>
+            <span class="about__fact-value">Python · Java</span>
+          </li>
+          <li class="about__fact">
+            <span class="about__fact-label">Herramientas &amp; Cloud</span>
+            <span class="about__fact-value">Oracle SQL · AWS · Postman · Docker</span>
+          </li>
+          <li class="about__fact">
+            <span class="about__fact-label">Experiencia en IA</span>
+            <span class="about__fact-value">Creación de agentes de IA con Python</span>
+          </li>
+          <li class="about__fact">
+            <span class="about__fact-label">Metodología</span>
+            <span class="about__fact-value">Design Thinking</span>
+          </li>
+        </ul>
+
+      </div>
+    </section>
+
+    <!-- ============ HABILIDADES ============ -->
+    <section class="skills" id="habilidades" aria-labelledby="skills-title">
+      <div class="container">
+        <p class="section-eyebrow">~/habilidades</p>
+        <h2 class="section-title" id="skills-title">Stack tecnológico</h2>
+
+        <div class="skills__groups">
+
+          <div class="skills__group">
+            <h3 class="skills__group-title">Lenguajes</h3>
+            <ul class="skills__grid">
+              <li class="skill-card">
+                <img class="skill-card__icon" src="https://cdn.jsdelivr.net/gh/devicon/devicon/icons/python/python-original.svg" alt="" width="32" height="32">
+                <span class="skill-card__name">Python</span>
+              </li>
+              <li class="skill-card">
+                <img class="skill-card__icon" src="https://cdn.jsdelivr.net/gh/devicon/devicon/icons/java/java-original.svg" alt="" width="32" height="32">
+                <span class="skill-card__name">Java</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="skills__group">
+            <h3 class="skills__group-title">Cloud &amp; Herramientas</h3>
+            <ul class="skills__grid">
+              <li class="skill-card">
+                <img class="skill-card__icon" src="https://cdn.jsdelivr.net/gh/devicon/devicon/icons/oracle/oracle-original.svg" alt="" width="32" height="32">
+                <span class="skill-card__name">Oracle SQL</span>
+              </li>
+              <li class="skill-card">
+                <img class="skill-card__icon" src="https://cdn.jsdelivr.net/gh/devicon/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="" width="32" height="32">
+                <span class="skill-card__name">AWS</span>
+              </li>
+              <li class="skill-card">
+                <img class="skill-card__icon" src="https://cdn.jsdelivr.net/gh/devicon/devicon/icons/postman/postman-original.svg" alt="" width="32" height="32">
+                <span class="skill-card__name">Postman</span>
+              </li>
+              <li class="skill-card">
+                <img class="skill-card__icon" src="https://cdn.jsdelivr.net/gh/devicon/devicon/icons/docker/docker-original.svg" alt="" width="32" height="32">
+                <span class="skill-card__name">Docker</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="skills__group">
+            <h3 class="skills__group-title">IA &amp; Metodologías</h3>
+            <ul class="skills__grid">
+              <li class="skill-card">
+                <svg class="skill-card__icon skill-card__icon--custom" width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M12 3V6M12 18V21M3 12H6M18 12H21M5.6 5.6L7.8 7.8M16.2 16.2L18.4 18.4M18.4 5.6L16.2 7.8M7.8 16.2L5.6 18.4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+                <span class="skill-card__name">Agentes de IA</span>
+              </li>
+              <li class="skill-card">
+                <svg class="skill-card__icon skill-card__icon--custom" width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M9 18H15M10 21H14M12 3C8.5 3 6 5.6 6 9C6 11.2 7.1 12.6 8.2 13.7C8.8 14.3 9 15 9 15.8V16H15V15.8C15 15 15.2 14.3 15.8 13.7C16.9 12.6 18 11.2 18 9C18 5.6 15.5 3 12 3Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="skill-card__name">Design Thinking</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
