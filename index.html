@@ -30,7 +30,7 @@
       <ul class="nav__menu" id="navMenu">
         <li><a href="#sobre-mi" class="nav__link">Sobre mí</a></li>
         <li><a href="#habilidades" class="nav__link">Habilidades</a></li>
-        <li><a href="#proyectos" class="nav__link">Proyectos</a></li>
+        <li><button type="button" class="nav__link nav__link--btn" id="navProjectsBtn" aria-haspopup="dialog">Proyectos</button></li>
         <li><a href="#contacto" class="nav__link nav__link--cta">Contacto</a></li>
       </ul>
     </nav>
@@ -55,7 +55,7 @@
         </p>
 
         <div class="hero__actions">
-          <a href="#proyectos" class="btn btn--primary">Ver proyectos</a>
+          <button type="button" class="btn btn--primary" id="viewProjectsBtn" aria-haspopup="dialog">Ver proyectos</button>
           <a href="mailto:matias.sandovalroa@gmail.com" class="btn btn--secondary">Contáctame</a>
           <a href="https://github.com/Matias-SR" class="btn btn--ghost" target="_blank" rel="noopener noreferrer">
             GitHub
@@ -139,11 +139,15 @@
             <h3 class="skills__group-title">Lenguajes</h3>
             <ul class="skills__grid">
               <li class="skill-card">
-                <img class="skill-card__icon" src="https://cdn.jsdelivr.net/gh/devicon/devicon/icons/python/python-original.svg" alt="" width="32" height="32">
+                <span class="skill-card__icon-wrap">
+                  <img class="skill-card__icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="" width="28" height="28">
+                </span>
                 <span class="skill-card__name">Python</span>
               </li>
               <li class="skill-card">
-                <img class="skill-card__icon" src="https://cdn.jsdelivr.net/gh/devicon/devicon/icons/java/java-original.svg" alt="" width="32" height="32">
+                <span class="skill-card__icon-wrap">
+                  <img class="skill-card__icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="" width="28" height="28">
+                </span>
                 <span class="skill-card__name">Java</span>
               </li>
             </ul>
@@ -153,19 +157,27 @@
             <h3 class="skills__group-title">Cloud &amp; Herramientas</h3>
             <ul class="skills__grid">
               <li class="skill-card">
-                <img class="skill-card__icon" src="https://cdn.jsdelivr.net/gh/devicon/devicon/icons/oracle/oracle-original.svg" alt="" width="32" height="32">
+                <span class="skill-card__icon-wrap">
+                  <img class="skill-card__icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg" alt="" width="28" height="28">
+                </span>
                 <span class="skill-card__name">Oracle SQL</span>
               </li>
               <li class="skill-card">
-                <img class="skill-card__icon" src="https://cdn.jsdelivr.net/gh/devicon/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="" width="32" height="32">
+                <span class="skill-card__icon-wrap">
+                  <img class="skill-card__icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" alt="" width="28" height="28">
+                </span>
                 <span class="skill-card__name">AWS</span>
               </li>
               <li class="skill-card">
-                <img class="skill-card__icon" src="https://cdn.jsdelivr.net/gh/devicon/devicon/icons/postman/postman-original.svg" alt="" width="32" height="32">
+                <span class="skill-card__icon-wrap">
+                  <img class="skill-card__icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" alt="" width="28" height="28">
+                </span>
                 <span class="skill-card__name">Postman</span>
               </li>
               <li class="skill-card">
-                <img class="skill-card__icon" src="https://cdn.jsdelivr.net/gh/devicon/devicon/icons/docker/docker-original.svg" alt="" width="32" height="32">
+                <span class="skill-card__icon-wrap">
+                  <img class="skill-card__icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="" width="28" height="28">
+                </span>
                 <span class="skill-card__name">Docker</span>
               </li>
             </ul>
@@ -175,16 +187,20 @@
             <h3 class="skills__group-title">IA &amp; Metodologías</h3>
             <ul class="skills__grid">
               <li class="skill-card">
-                <svg class="skill-card__icon skill-card__icon--custom" width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.5"/>
-                  <path d="M12 3V6M12 18V21M3 12H6M18 12H21M5.6 5.6L7.8 7.8M16.2 16.2L18.4 18.4M18.4 5.6L16.2 7.8M7.8 16.2L5.6 18.4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                </svg>
+                <span class="skill-card__icon-wrap skill-card__icon-wrap--accent">
+                  <svg class="skill-card__icon skill-card__icon--custom" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.5"/>
+                    <path d="M12 3V6M12 18V21M3 12H6M18 12H21M5.6 5.6L7.8 7.8M16.2 16.2L18.4 18.4M18.4 5.6L16.2 7.8M7.8 16.2L5.6 18.4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  </svg>
+                </span>
                 <span class="skill-card__name">Agentes de IA</span>
               </li>
               <li class="skill-card">
-                <svg class="skill-card__icon skill-card__icon--custom" width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M9 18H15M10 21H14M12 3C8.5 3 6 5.6 6 9C6 11.2 7.1 12.6 8.2 13.7C8.8 14.3 9 15 9 15.8V16H15V15.8C15 15 15.2 14.3 15.8 13.7C16.9 12.6 18 11.2 18 9C18 5.6 15.5 3 12 3Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
+                <span class="skill-card__icon-wrap skill-card__icon-wrap--accent">
+                  <svg class="skill-card__icon skill-card__icon--custom" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M9 18H15M10 21H14M12 3C8.5 3 6 5.6 6 9C6 11.2 7.1 12.6 8.2 13.7C8.8 14.3 9 15 9 15.8V16H15V15.8C15 15 15.2 14.3 15.8 13.7C16.9 12.6 18 11.2 18 9C18 5.6 15.5 3 12 3Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
                 <span class="skill-card__name">Design Thinking</span>
               </li>
             </ul>
@@ -194,6 +210,71 @@
       </div>
     </section>
   </main>
+
+  <!-- ============ MODAL DE PROYECTOS ============ -->
+  <!-- Para agregar un nuevo proyecto a futuro: copia un <article class="project-card"> completo
+       dentro de #projectsList y edita su contenido. No requiere tocar CSS ni JS. -->
+  <dialog class="modal" id="projectsModal" aria-labelledby="projectsModalTitle">
+    <div class="modal__panel">
+      <header class="modal__header">
+        <div>
+          <p class="section-eyebrow">~/proyectos</p>
+          <h2 class="modal__title" id="projectsModalTitle">Proyectos</h2>
+        </div>
+        <button type="button" class="modal__close" id="closeProjectsModal" aria-label="Cerrar ventana de proyectos">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <path d="M4 4L14 14M14 4L4 14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </header>
+
+      <div class="modal__body" id="projectsList">
+
+        <article class="project-card">
+          <div class="project-card__head">
+            <h3 class="project-card__title">Dentify</h3>
+            <ul class="project-card__tags">
+              <li class="tag">Backend</li>
+              <li class="tag">Microservicios</li>
+              <li class="tag">Testing</li>
+            </ul>
+          </div>
+          <p class="project-card__desc">
+            Proyecto backend para una consulta odontológica. Gestiona la clínica de punta a punta:
+            agenda de pacientes, manejo de horarios, revisión de valores, registro de procedimientos
+            y asignación de roles de dentistas. Incluye pruebas para cada input del sistema y está
+            dividido en microservicios.
+          </p>
+          <!-- Cuando tengas el repo público, descomenta y completa este link:
+          <a href="https://github.com/Matias-SR/dentify" class="project-card__link" target="_blank" rel="noopener noreferrer">Ver código →</a>
+          -->
+        </article>
+
+        <article class="project-card">
+          <div class="project-card__head">
+            <h3 class="project-card__title">Agente de IA para Turismo</h3>
+            <ul class="project-card__tags">
+              <li class="tag">Python</li>
+              <li class="tag">GPT API</li>
+              <li class="tag">OpenWeather API</li>
+            </ul>
+          </div>
+          <p class="project-card__desc">
+            Agente de inteligencia artificial que coordina el itinerario de un turista que visita
+            Puerto Montt y sus alrededores. Se conecta a la API de GPT y a OpenWeather para mostrar
+            el clima en tiempo real y el pronóstico del día del tour, recomienda la vestimenta
+            adecuada y calcula el costo de transporte según la opción elegida (vehículo propio o
+            transporte público). Al finalizar, envía un correo confirmando la selección del usuario
+            junto al valor estimado del recorrido.
+          </p>
+          <!-- Cuando tengas el repo público, descomenta y completa este link:
+          <a href="https://github.com/Matias-SR/agente-turismo-ia" class="project-card__link" target="_blank" rel="noopener noreferrer">Ver código →</a>
+          -->
+        </article>
+
+      </div>
+    </div>
+  </dialog>
 
   <script src="js/script.js"></script>
 </body>

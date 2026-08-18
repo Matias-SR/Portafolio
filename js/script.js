@@ -47,7 +47,44 @@ function initNavToggle() {
   });
 }
 
+/* =============================================================
+   Modal de proyectos
+   ============================================================= */
+function initProjectsModal() {
+  const modal = document.getElementById("projectsModal");
+  const openBtns = [
+    document.getElementById("viewProjectsBtn"),
+    document.getElementById("navProjectsBtn"),
+  ].filter(Boolean);
+  const closeBtn = document.getElementById("closeProjectsModal");
+  if (!modal) return;
+
+  const openModal = () => {
+    modal.showModal();
+    document.body.style.overflow = "hidden"; // evita scroll de fondo
+  };
+
+  const closeModal = () => {
+    modal.close();
+    document.body.style.overflow = "";
+  };
+
+  openBtns.forEach((btn) => btn.addEventListener("click", openModal));
+  closeBtn?.addEventListener("click", closeModal);
+
+  // Cerrar al hacer click en el fondo (backdrop)
+  modal.addEventListener("click", (event) => {
+    if (event.target === modal) closeModal();
+  });
+
+  // Restaurar el scroll si se cierra con la tecla Esc (evento nativo del <dialog>)
+  modal.addEventListener("close", () => {
+    document.body.style.overflow = "";
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   initAvailabilityBadge();
   initNavToggle();
+  initProjectsModal();
 });
