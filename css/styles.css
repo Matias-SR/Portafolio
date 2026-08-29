@@ -48,6 +48,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -62,6 +63,9 @@ html {
 }
 
 body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
   background-color: var(--color-bg);
   color: var(--color-text);
   font-family: var(--font-body);
@@ -150,6 +154,10 @@ button:focus-visible {
    4. HEADER / NAV
    ============================================================= */
 .site-header {
+  --header-height: 64px;
+}
+
+.site-header {
   position: sticky;
   top: 0;
   z-index: 100;
@@ -204,15 +212,22 @@ button:focus-visible {
 
 .nav__menu {
   position: fixed;
-  inset: 0 0 0 30%;
+  top: var(--header-height, 64px);
+  right: 0;
+  bottom: 0;
+  left: auto;
+  width: min(70vw, 320px);
+  max-width: 100%;
   background-color: var(--color-bg);
   border-left: 1px solid var(--color-border);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: center;
-  gap: var(--space-lg);
-  padding: var(--space-lg);
+  justify-content: flex-start;
+  gap: 1.25rem;
+  padding: 2rem 1.5rem 2rem;
+  overflow-y: auto;
+  overscroll-behavior: contain;
   transform: translateX(100%);
   transition: transform var(--transition);
 }
@@ -244,6 +259,8 @@ button:focus-visible {
 
   .nav__menu {
     position: static;
+    width: auto;
+    max-width: none;
     flex-direction: row;
     align-items: center;
     background: none;
@@ -724,5 +741,212 @@ button:focus-visible {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+  }
+}
+
+/* =============================================================
+   10. MODAL DE CONTACTO
+   ============================================================= */
+.nav__link--cta {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  background: none;
+  cursor: pointer;
+}
+
+.contact-modal {
+  width: min(620px, 92vw);
+}
+
+.contact-modal__body {
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.contact-modal__intro {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  max-width: 52ch;
+}
+
+.contact-modal__label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-text-muted);
+  margin-bottom: 0.25rem;
+}
+
+.contact-email {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+  background-color: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.contact-email__icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-accent-hover);
+  background-color: var(--color-accent-soft);
+  border: 1px solid rgba(127, 0, 255, 0.3);
+}
+
+.contact-email__address {
+  display: block;
+  font-size: 0.92rem;
+  font-weight: 500;
+  word-break: break-word;
+}
+
+.contact-email__actions {
+  display: flex;
+  gap: 0.45rem;
+}
+
+.contact-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  min-height: 38px;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background-color: transparent;
+  color: var(--color-text-muted);
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color var(--transition), border-color var(--transition), background-color var(--transition), transform var(--transition);
+}
+
+.contact-action:hover {
+  color: var(--color-text);
+  border-color: var(--color-text-muted);
+  transform: translateY(-1px);
+}
+
+.contact-action--primary {
+  color: #FFFFFF;
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.contact-action--primary:hover {
+  color: #FFFFFF;
+  background-color: var(--color-accent-hover);
+  border-color: var(--color-accent-hover);
+}
+
+.contact-socials {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-sm);
+}
+
+.contact-social {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+  background-color: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition: transform var(--transition), border-color var(--transition), background-color var(--transition);
+}
+
+.contact-social:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-accent);
+  background-color: var(--color-accent-soft);
+}
+
+.contact-social__icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.06);
+  color: var(--color-text);
+}
+
+.contact-social__icon--instagram,
+.contact-social__icon--linkedin {
+  color: var(--color-accent-hover);
+}
+
+.contact-social strong,
+.contact-social small {
+  display: block;
+}
+
+.contact-social strong {
+  font-size: 0.92rem;
+  margin-bottom: 0.1rem;
+}
+
+.contact-social small {
+  color: var(--color-text-muted);
+  font-size: 0.76rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.contact-social__arrow {
+  color: var(--color-text-muted);
+  transition: transform var(--transition), color var(--transition);
+}
+
+.contact-social:hover .contact-social__arrow {
+  color: var(--color-accent-hover);
+  transform: translate(2px, -2px);
+}
+
+.hero__avatar {
+  overflow: hidden;
+}
+
+.hero__avatar-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 28%;
+  border-radius: inherit;
+}
+
+@media (max-width: 639px) {
+  .contact-email {
+    grid-template-columns: auto 1fr;
+  }
+
+  .contact-email__actions {
+    grid-column: 1 / -1;
+    justify-content: stretch;
+  }
+
+  .contact-action {
+    flex: 1;
+  }
+
+  .contact-socials {
+    grid-template-columns: 1fr;
   }
 }
