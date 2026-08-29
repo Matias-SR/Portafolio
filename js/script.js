@@ -4,7 +4,7 @@
    ============================================================= */
 const CONFIG = {
   // "available" | "unavailable"
-  availability: "available",
+  availability: "unavailable",
 };
 
 /* =============================================================
