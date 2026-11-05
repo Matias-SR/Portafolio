@@ -915,6 +915,111 @@ button:focus-visible {
   transform: translate(2px, -2px);
 }
 
+/* =============================================================
+   Acabado glassmórfico
+   ============================================================= */
+:root {
+  --color-bg: #090a12;
+  --color-bg-alt: rgba(255, 255, 255, 0.055);
+  --color-border: rgba(220, 220, 255, 0.14);
+  --color-accent: #8b5cf6;
+  --color-accent-hover: #c4a7ff;
+  --color-accent-soft: rgba(139, 92, 246, 0.15);
+  --glass-fill: rgba(255, 255, 255, 0.055);
+  --glass-highlight: rgba(255, 255, 255, 0.22);
+  --glass-blur: 18px;
+}
+
+body {
+  position: relative;
+  isolation: isolate;
+  background-color: var(--color-bg);
+  background-image:
+    radial-gradient(ellipse at 15% 12%, rgba(99, 52, 190, 0.24), transparent 38%),
+    radial-gradient(ellipse at 88% 38%, rgba(27, 109, 171, 0.18), transparent 34%),
+    radial-gradient(circle, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+  background-size: auto, auto, 28px 28px;
+  background-attachment: fixed;
+}
+
+.site-header {
+  background: rgba(9, 10, 18, 0.66);
+  border-bottom-color: rgba(220, 220, 255, 0.12);
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(145%);
+  backdrop-filter: blur(var(--glass-blur)) saturate(145%);
+}
+
+.nav__menu {
+  background: rgba(12, 13, 24, 0.88);
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  backdrop-filter: blur(var(--glass-blur));
+}
+
+.hero__badge,
+.about__fact,
+.skill-card,
+.project-card,
+.contact-email,
+.contact-social,
+.modal__close {
+  background: var(--glass-fill);
+  border: 1px solid var(--color-border);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.07), 0 12px 32px rgba(0, 0, 0, 0.14);
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(135%);
+  backdrop-filter: blur(var(--glass-blur)) saturate(135%);
+}
+
+.hero__badge { border-color: rgba(74, 222, 128, 0.24); }
+
+.about__facts {
+  gap: var(--space-sm);
+  background: transparent;
+  border: 0;
+  overflow: visible;
+}
+
+.about__fact {
+  border-radius: var(--radius-md);
+  transition: transform var(--transition), border-color var(--transition), background-color var(--transition);
+}
+
+.about__fact:hover,
+.skill-card:hover,
+.project-card:hover,
+.contact-social:hover {
+  transform: translateY(-3px);
+  border-color: rgba(196, 167, 255, 0.55);
+  background-color: rgba(139, 92, 246, 0.12);
+}
+
+.skill-card { min-width: 0; }
+
+.modal {
+  background: rgba(13, 14, 25, 0.82);
+  border-color: rgba(220, 220, 255, 0.2);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  -webkit-backdrop-filter: blur(26px) saturate(145%);
+  backdrop-filter: blur(26px) saturate(145%);
+}
+
+.modal::backdrop { background-color: rgba(4, 5, 12, 0.68); }
+
+.project-card { background-color: rgba(255, 255, 255, 0.04); }
+
+.contact-social__icon {
+  background-color: rgba(255, 255, 255, 0.075);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .site-header, .nav__menu, .hero__badge, .about__fact, .skill-card,
+  .project-card, .contact-email, .contact-social, .modal, .modal__close {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    background-color: #151522;
+  }
+}
+
 .hero__avatar {
   overflow: hidden;
 }
